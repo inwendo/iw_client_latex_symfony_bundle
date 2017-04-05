@@ -1,0 +1,4 @@
+services:
+  inwendo.latexclient.service:
+    class:     Inwendo\LatexClientBundle\Tools\LatexService
+    arguments: ["@service_container"]
