@@ -72,7 +72,7 @@ class LatexService
         if($loggedIn){
             Configuration::getDefaultConfiguration()->setAccessToken($serviceAccount->getAccessToken());
             $api = new DocumentApi();
-            $mapping = $this->db->getRepository("InwendoLatexClientBundle:LatexDocumentMapping")->findOneBy(array("localId" => $local_document_id, "latex_service_account" => $serviceAccount));
+            $mapping = $this->db->getRepository("InwendoLatexClientBundle:LatexDocumentMapping")->findOneBy(array("localId" => $local_document_id, "latexAccount" => $serviceAccount));
             if($mapping != null){
                 try{
                     $result = $api->putDocumentItem($mapping->getDistantId(), $documentRequest);
