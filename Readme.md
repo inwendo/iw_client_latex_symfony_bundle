@@ -57,8 +57,8 @@ class AppKernel extends Kernel
 
 ```yaml
 inwendo_latex_client:
-    oauth_client_id: "%latex_oauth_client_id%"
-    oauth_client_secret: "%latex_oauth_client_secret%"
+    endpoint: "%latex_endpoint%"
+    jwt_license_token: "%latex_jwt_license_token%"
 ```
 
 ### Step 5: Usage:

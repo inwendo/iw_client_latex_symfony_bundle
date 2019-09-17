@@ -23,11 +23,9 @@ class InwendoLatexClientExtension extends Extension
         $config = $this->processConfiguration($configuration, $configs);
 
         $endpoint = $config['endpoint'];
-        $oauth_client_id = $config['oauth_client_id'];
-        $oauth_client_secret = $config['oauth_client_secret'];
+        $jwt_license_token = $config['jwt_license_token'];
         $container->setParameter('inwendo_latex_client.endpoint', $endpoint);
-        $container->setParameter('inwendo_latex_client.oauth_client_id', $oauth_client_id);
-        $container->setParameter('inwendo_latex_client.oauth_client_secret', $oauth_client_secret);
+        $container->setParameter('inwendo_latex_client.jwt_license_token', $jwt_license_token);
 
         $loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('services.yml');

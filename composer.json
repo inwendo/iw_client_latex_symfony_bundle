@@ -9,10 +9,9 @@
         "email": "enno@inwendo.de"
     }],
     "require": {
-        "php": "^7.0",
+        "php": "^7.1",
         "symfony/symfony": "^2.8|^3.0",
-        "inwendo/iw_client_latex_php": "^1.0",
-        "inwendo/iw_client_auth_user_symfony_bundle": "^0.2"
+        "inwendo/iw_client_latex_php": "^1.0"
     },
     "autoload": {
         "psr-4": { "Inwendo\\LatexClientBundle\\": "" },

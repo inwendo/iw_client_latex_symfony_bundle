@@ -1,7 +1,9 @@
 <?php
+
 namespace Inwendo\LatexClientBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+
 /**
  * LatexDocumentMapping
  *
@@ -18,13 +20,14 @@ class LatexDocumentMapping
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
+
     /**
-     * @var LatexServiceAccount
+     * @var integer
      *
-     * @ORM\ManyToOne(targetEntity="Inwendo\LatexClientBundle\Entity\LatexServiceAccount")
-     * @ORM\JoinColumn(name="latex_service_account", referencedColumnName="id")
+     * @ORM\Column(name="local_user_id", type="integer")
      */
-    private $latexAccount;
+    private $localUserId;
+
     /**
      * @var integer
      *
@@ -37,6 +40,7 @@ class LatexDocumentMapping
      * @ORM\Column(name="distant_id", type="integer")
      */
     private $distantId;
+
     /**
      * Get id
      *
@@ -46,6 +50,23 @@ class LatexDocumentMapping
     {
         return $this->id;
     }
+
+    /**
+     * @return int
+     */
+    public function getLocalUserId()
+    {
+        return $this->localUserId;
+    }
+
+    /**
+     * @param int $localUserId
+     */
+    public function setLocalUserId($localUserId)
+    {
+        $this->localUserId = $localUserId;
+    }
+
     /**
      * @return int
      */
@@ -53,6 +74,7 @@ class LatexDocumentMapping
     {
         return $this->localId;
     }
+
     /**
      * @param int $localId
      */
@@ -60,6 +82,7 @@ class LatexDocumentMapping
     {
         $this->localId = $localId;
     }
+
     /**
      * @return int
      */
@@ -67,6 +90,7 @@ class LatexDocumentMapping
     {
         return $this->distantId;
     }
+
     /**
      * @param int $distantId
      */
@@ -74,21 +98,4 @@ class LatexDocumentMapping
     {
         $this->distantId = $distantId;
     }
-
-    /**
-     * @return LatexServiceAccount
-     */
-    public function getLatexAccount()
-    {
-        return $this->latexAccount;
-    }
-
-    /**
-     * @param LatexServiceAccount $latexAccount
-     */
-    public function setLatexAccount($latexAccount)
-    {
-        $this->latexAccount = $latexAccount;
-    }
-
 }
