@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * LatexDocumentMapping
  *
- * @ORM\Table(name="iw_client_latex_document_mapping", uniqueConstraints={@ORM\UniqueConstraint(name="document_mapping_unique", columns={"local_id", "latex_service_account"})})
+ * @ORM\Table(name="iw_client_latex_document_mapping", uniqueConstraints={@ORM\UniqueConstraint(name="document_mapping_unique", columns={"local_id", "local_user_id"})})
  * @ORM\Entity
  */
 class LatexDocumentMapping
