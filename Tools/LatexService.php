@@ -39,6 +39,7 @@ class LatexService
         Configuration::getDefaultConfiguration()->addDefaultHeader('X-SERVICE-USER-ID', $local_user_id);
         Configuration::getDefaultConfiguration()->setHost($this->containerInterface->getParameter("inwendo_latex_client.endpoint"));
         $api = new EnvironmentDataApi();
+        $api->getApiClient()->getConfig()->setHost($this->containerInterface->getParameter("inwendo_latex_client.endpoint"));
         try{
             $response = $api->putEnvironmentDataItem($environmentDataRequest);
         } catch (\Exception $e) {
@@ -58,6 +59,7 @@ class LatexService
         Configuration::getDefaultConfiguration()->addDefaultHeader('X-SERVICE-USER-ID', $local_user_id);
         Configuration::getDefaultConfiguration()->setHost($this->containerInterface->getParameter("inwendo_latex_client.endpoint"));
         $api = new DocumentApi();
+        $api->getApiClient()->getConfig()->setHost($this->containerInterface->getParameter("inwendo_latex_client.endpoint"));
         /** @var LatexDocumentMapping $mapping */
         $mapping = $this->db->getRepository("InwendoLatexClientBundle:LatexDocumentMapping")->findOneBy(array("localId" => $local_document_id, "localUserId" => $local_user_id));
         if($mapping != null){
